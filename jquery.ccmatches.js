@@ -3,8 +3,7 @@
  *
  * Thanks to https://gist.github.com/tkissing/1344175 for the luhnCheck
  */
-(function() {
-	$ = jQuery;
+(function($) {
 	$.fn.ccmatches  = function(callback) {
 		var cards = [
 			{
@@ -90,4 +89,4 @@
 		
 		return $(this);
 	}
-})();
+})(jQuery);
