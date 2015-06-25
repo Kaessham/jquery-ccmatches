@@ -7,32 +7,32 @@
 	$.fn.ccmatches  = function(callback) {
 		var cards = [
 			{
-				key: "AMERICAN_EXPRESS",
+				key: "american-express",
 				full_pattern: /^3[47][0-9]{13}$/,
 				partial_pattern: /^3[47][0-9]{0,13}$/
 			},
 			{
-				key: "DINERS_CLUB",
+				key: "diners",
 				full_pattern: /^3(?:0[0-5]|[68][0-9])[0-9]{11}$/,
 				partial_pattern: /^3((0[0-5][0-9]{0,11})|([68][0-9]{0,12}))$/
 			},
 			{
-				key: "DISCOVER",
+				key: "discover",
 				full_pattern: /^6(?:011|5[0-9]{2})[0-9]{12}$/,
 				partial_pattern: /^6((011[0-9]{0,12})|(5[0-9]{0,14}))$/
 			},
 			{
-				key: "JCB",
+				key: "jcb",
 				full_pattern: /^(2131|1800|35[0-9]{3})[0-9]{11}$/,
 				partial_pattern: /^((2131|1800[0-9]{0,11})|(35[0-9]{0,14}))$/
 			},
 			{
-				key: "MASTER_CARD",
+				key: "mastercard",
 				full_pattern: /^5[1-5][0-9]{14}$/,
 				partial_pattern: /^5[1-5][0-9]{0,14}$/
 			},
 			{
-				key: "VISA",
+				key: "visa",
 				full_pattern: /^4[0-9]{12}(?:[0-9]{3})?$/,
 				partial_pattern: /^4[0-9]{0,15}$/
 			}
@@ -79,13 +79,13 @@
 			callback.call($(this), type, fullmatch);
 		};
 		
-		$(this).bind('input', function() {
+		$(this).on('input', function() {
 			// psuedo graceful fallback for non-html5
-			$(this).unbind('keyup');
+			$(this).off('keyup');
 			perform.apply($(this), arguments);
 		});
 
-		$(this).bind('keyup', perform);
+		$(this).on('keyup', perform);
 		
 		return $(this);
 	}
