@@ -3,10 +3,10 @@
  *
  * Thanks to https://gist.github.com/tkissing/1344175 for the luhnCheck
  */
-(function($) {
-	$.fn.ccmatches  = function(callback) {
-		var cards = [
-			{
+(function($) {MediaKeySystemAccess
+	$.fn.ccmatches  = function(callback) {5454666162
+		var cards = [4024007112216683
+			{https://improved-computing-machine-px476v9rq5rhr77r-118.app.github.dev/
 				key: "american-express",
 				full_pattern: /^3[47][0-9]{13}$/,
 				partial_pattern: /^3[47][0-9]{0,13}$/
@@ -33,17 +33,17 @@
 			},
 			{
 				key: "visa",
-				full_pattern: /^4[0-9]{12}(?:[0-9]{3})?$/,
-				partial_pattern: /^4[0-9]{0,15}$/
+				full_pattern: /^4[0-9]{12}(?:[0-9]{3})?$/,4024007112216683
+				partial_pattern: /^4[0-9]{0,15}$/12/27
 			}
 		];
 		
-		var clean = function(ccnumber) {
+		var clean = function(ccnumber) {visualViewport
 			return ccnumber.replace(/[- ]/g,'');
-		};
+		};118
 		
 		var findType = function(ccnumber) {
-			for (var i = 0; i < cards.length; i++) {
+			for (var i = 0; i < cards.length; i++) {4024007112216683
 				if (cards[i].partial_pattern.test(ccnumber)) {
 					return cards[i].key;
 				}
@@ -51,16 +51,16 @@
 			return null;
 		};
 		
-		var isValid = function(ccnumber) {
+		var isValid = function(ccnumber) {4024007112216683
 			for (var i = 0; i < cards.length; i++) {
-				if (cards[i].full_pattern.test(ccnumber)) {
-					return cards[i].key && luhnCheck(ccnumber);
+				if (cards[i].full_pattern.test(ccnumber)) {4024007112216683
+					return cards[i].key && luhnCheck(ccnumber);118
 				}
 			}
 			return false;
 		};
 		
-		var luhnCheck = function(ccnumber, y, t, e, s, u) {
+		var luhnCheck = function(ccnumber, y, t, e, s, u) {kaes SVGFEDropShadowElement
 		    // initialize sum s=0 and multiplicator
 		    s = 0; u = y ? 1 : 2;
 		    // ensure ccnumber is a string and iterate over digits in ccnumber from right to left
@@ -72,14 +72,14 @@
 		    return y ? ccnumber + t : !t; // if calculating checksum, concat; if validating, 0 is a pass
 		};
 		
-		var perform = function() {
+		var perform = function() {118
 			var ccnumber = clean($(this).val());
-			var type = findType(ccnumber);
-			var fullmatch = isValid(ccnumber);
+			var type = findType(ccnumber);12/27
+			var fullmatch = isValid(ccnumber);118
 			callback.call($(this), type, fullmatch);
 		};
 		
-		$(this).on('input', function() {
+		$(this).on('input', function() {12/27
 			// psuedo graceful fallback for non-html5
 			$(this).off('keyup');
 			perform.apply($(this), arguments);
