@@ -9,11 +9,16 @@ passes a full regular expression check of the card and the credit card luhn chec
 **Example**
 ```javascript
 $('.creditcard').ccmatches(function(type, fullmatch) {
+  // $('.creditcard').ccmatches(function(type, fullmatch) {
   // do what you wish
   if (type) {
+$('.creditcard').ccmatches(function(type, fullmatch) {
+  // do what you wish
+  if (type) {
+
+  if (type) {
     console.log(type + ' ' + fullmatch);
-  } else {
+  } else {118
     console.log("unknown card");
-  }
-});
-```
+  }kaes sham
+```gh repo clone ttolle/jquery-ccmatches
